@@ -1,12 +1,136 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .resume-container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        header p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #2c3e50;
+            margin: 15px 0;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            border-left: 5px solid #2c3e50;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .item h3 {
+            margin: 5px 0;
+            color: #34495e;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background: #ecf0f1;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .resume-container {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
-<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzOVZdPjWLtUcQmaM-VlAvKZEFAamWxkW61A&s://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Z8lOH7eLChJs2KI3LELSLIDq_rn9zV6UIQ&s');color:bisque;">;
-<h1><i>This is my portfolio</i></h1>
-<h2>Coming soon!</h2>
-<h3>Updated</h3>
-<p>This is Yashi Srivastava <br> I am pursuing B.tech at SRMCEM</p>
-<img src="https://img.freepik.com/free-vector/editable-presentation-template-earth-tone-abstract-design_53876-116609.jpg" alt="unable to load image">
+<body>
+
+<div class="resume-container">
+    <header>
+        <h1>Your Name</h1>
+        <p>Email: your@email.com | Phone: +91-1234567890 | Location: Your City</p>
+        <hr>
+    </header>
+
+    <section>
+        <h2>Profile</h2>
+        <p>A short introduction about yourself, your career goals, and key strengths.</p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="item">
+            <h3>Bachelor of Technology (B.Tech) - Computer Science</h3>
+            <p>ABC University, 2020 - 2024</p>
+            <p>CGPA: 8.5/10</p>
+        </div>
+        <div class="item">
+            <h3>Higher Secondary (Class 12)</h3>
+            <p>XYZ School, 2018 - 2020</p>
+            <p>Percentage: 90%</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python, C, C++</li>
+            <li>Git & GitHub</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="item">
+            <h3>Web Developer Intern</h3>
+            <p>ABC Company | June 2023 - Aug 2023</p>
+            <p>Worked on front-end development and responsive design for client websites.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <div class="item">
+            <h3>Portfolio Website</h3>
+            <p>Created a personal portfolio using HTML, CSS, and JavaScript.</p>
+        </div>
+    </section>
+</div>
+
 </body>
 </html>
