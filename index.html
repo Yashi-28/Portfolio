@@ -3,163 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Resume</title>
-
+    <title>My Dark Portfolio</title>
     <style>
+        /* General Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background: #f4f4f4; /* Light background outside */
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff; /* White headings */
+        }
+
+        a {
+            text-decoration: none;
+            color: #bb86fc; /* Purple link color for contrast */
+        }
+
+        a:hover {
+            color: #cf66ff;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: #1e1e1e; /* Darker header */
             color: #fff;
+            padding: 1rem 0;
+            border-bottom: 2px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .resume-container {
-            width: 80%;
-            max-width: 900px;
-            margin: 40px auto;
-            background: #000; /* Black background only for content area */
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            margin-bottom: 5px;
-            background: linear-gradient(90deg, #ff5f6d, #ffc371);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            font-size: 1em;
-            color: #bbb;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            margin: 20px 0;
-        }
-
-        section {
-            margin-bottom: 25px;
-        }
-
-        /* Different colors for each section */
-        section:nth-child(2) h2 { border-left: 4px solid #ff5f6d; color: #ff5f6d; }
-        section:nth-child(3) h2 { border-left: 4px solid #00bcd4; color: #00bcd4; }
-        section:nth-child(4) h2 { border-left: 4px solid #9c27b0; color: #9c27b0; }
-        section:nth-child(5) h2 { border-left: 4px solid #ff9800; color: #ff9800; }
-        section:nth-child(6) h2 { border-left: 4px solid #4caf50; color: #4caf50; }
-
-        section h2 {
-            font-size: 1.5em;
-            padding-left: 10px;
-            margin-bottom: 15px;
-        }
-
-        .item h3 {
-            margin: 5px 0;
-            color: #fff;
+        header .logo {
+            float: left;
+            font-size: 1.8rem;
             font-weight: bold;
         }
 
-        .item p {
-            color: #ccc;
-            margin: 3px 0;
+        header nav {
+            float: right;
         }
 
-        ul {
+        header nav ul {
+            margin: 0;
+            padding: 0;
             list-style: none;
-            padding-left: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
         }
 
-        ul li {
-            background: #00bcd4;
-            color: #000;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        header nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            padding: 5px 10px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: color 0.3s ease;
+            color: #e0e0e0;
         }
 
-        ul li:hover {
-            transform: scale(1.05);
-            background: #0097a7;
-            color: white;
+        header nav ul li a:hover {
+            color: #bb86fc;
+        }
+
+        header::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: #1e1e1e;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        #hero .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #bb86fc; /* Purple border */
+            margin-bottom: 1rem;
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #bb86fc;
+            color: #121212;
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #cf66ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            background: #121212;
+            border-bottom: 1px solid #333;
+        }
+
+        section:nth-of-type(even) {
+            background: #1e1e1e;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #bb86fc;
+        }
+
+        /* Skills Section */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #skills ul li {
+            background: #1e1e1e;
+            color: #e0e0e0;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #skills ul li:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Education Section */
+        .education-entry {
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .education-entry h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #bb86fc;
+        }
+
+        .education-entry p {
+            margin: 0;
+            color: #b0b0b0;
+        }
+
+        /* Contact Section */
+        #contact .contact-info {
+            text-align: center;
+        }
+
+        #contact .social-links {
+            margin-top: 2rem;
+        }
+
+        #contact .social-links a {
+            font-size: 2rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+            color: #e0e0e0;
+        }
+
+        #contact .social-links a:hover {
+            color: #bb86fc;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 1rem 0;
         }
 
         /* Responsive Design */
-        @media screen and (max-width: 600px) {
-            .resume-container {
-                width: 90%;
-                padding: 20px;
+        @media (max-width: 768px) {
+            header .logo,
+            header nav {
+                float: none;
+                text-align: center;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
     <header>
-        <h1>Your Name</h1>
-        <p>Email: your@email.com | Phone: +91-1234567890 | Location: Your City</p>
-        <hr>
+        <div class="container">
+            <h1 class="logo"><a href="#">PORTFOLIO</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section>
-        <h2>Profile</h2>
-        <p>A short introduction about yourself, your career goals, and key strengths.</p>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQFYvprG5osFJQ/profile-displayphoto-shrink_200_200/B4EZbjLCrIGQAY-/0/1747568046317?e=2147483647&v=beta&t=ASFPMeCJ8-YUffdfkhm4MfPZ5Ce8RJY8G0YAzz2vyZM"  class="profile-img">
+                <h1>Hello, I'm Yashi Srivastava</h1>
+                <p>B.Tech student with strong skills in coding and web development, experienced in creating responsive and interactive websites. Passionate about problem-solving and learning modern technologies.</p>
+                <a href="#education" class="cta-button">View My Education</a>
+            </div>
+        </section>
 
-    <section>
-        <h2>Education</h2>
-        <div class="item">
-            <h3>Bachelor of Technology (B.Tech) - Computer Science</h3>
-            <p>ABC University, 2020 - 2024</p>
-            <p>CGPA: 8.5/10</p>
-        </div>
-        <div class="item">
-            <h3>Higher Secondary (Class 12)</h3>
-            <p>XYZ School, 2018 - 2020</p>
-            <p>Percentage: 90%</p>
-        </div>
-    </section>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <p>I am a dedicated B.Tech student with a deep interest in coding and modern web development. Over the course of my academic journey, I have gained hands-on experience in HTML, CSS, JavaScript, and various programming languages such as Python and C++. I enjoy transforming ideas into functional, responsive, and visually appealing websites that deliver great user experiences. My projects reflect a blend of creativity, logical thinking, and problem-solving abilities.</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>C++</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git & GitHub</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-        <h2>Experience</h2>
-        <div class="item">
-            <h3>Web Developer Intern</h3>
-            <p>ABC Company | June 2023 - Aug 2023</p>
-            <p>Worked on front-end development and responsive design for client websites.</p>
-        </div>
-    </section>
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">My Education</h2>
+                <div class="education-entry">
+                    <h3>Schooling</h3>
+                    <p>City Montessori School - Rajendra Nagar | 2009-20023</p>
+                    <p>Grateful to my school for shaping my values, discipline, and curiosity to learn.My school has been the foundation of my knowledge, confidence, and dreams.</p>
+                    <p>Grateful to have secured 98.4% in Class 10 and 98.75% in Class 12, a reflection of consistent effort and guidance from my teachers.</p>
+                </div>
+                <div class="education-entry">
+                    <h3>Bachelor in Technology(Computer Science Engineering)</h3>
+                    <p>Shri Ramswaroop Memorial of Engineering and Management | 2024-2028</p>
+                    <p>I am constantly exploring new technologies, frameworks, and design trends to stay ahead in the ever-evolving tech world.</p>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>Projects</h2>
-        <div class="item">
-            <h3>Portfolio Website</h3>
-            <p>Created a personal portfolio using HTML, CSS, and JavaScript.</p>
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-info">
+                    <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+                    <p>Email: <a href="yashisrivastava800@gmail.com">yashisrivastava800@gmail.com</a></p>
+                    <p>Phone number=9369919686</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><span>🔗</span></a>
+                        <a href="#" target="_blank"><span>&#x1F4F0;</span></a>
+                        <a href="#" target="_blank"><span>&#x1F4BB;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 John Doe. All Rights Reserved.</p>
         </div>
-    </section>
-</div>
+    </footer>
 
 </body>
 </html>
