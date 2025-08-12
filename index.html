@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Resume</title>
+    <title>Colorful Resume</title>
 
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #1e1e1e, #333); /* Dark gradient background */
+            background: #f4f4f4; /* Light background outside */
             color: #fff;
         }
 
@@ -17,17 +17,18 @@
             width: 80%;
             max-width: 900px;
             margin: 40px auto;
-            background: rgba(0,0,0,0.85); /* Glassy black */
+            background: #000; /* Black background only for content area */
             padding: 30px 40px;
             border-radius: 15px;
-            box-shadow: 0 0 25px rgba(255,255,255,0.1);
-            backdrop-filter: blur(8px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
 
         header h1 {
             font-size: 2.8em;
             margin-bottom: 5px;
-            color: #00bcd4; /* Accent color */
+            background: linear-gradient(90deg, #ff5f6d, #ffc371);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header p {
@@ -45,12 +46,17 @@
             margin-bottom: 25px;
         }
 
+        /* Different colors for each section */
+        section:nth-child(2) h2 { border-left: 4px solid #ff5f6d; color: #ff5f6d; }
+        section:nth-child(3) h2 { border-left: 4px solid #00bcd4; color: #00bcd4; }
+        section:nth-child(4) h2 { border-left: 4px solid #9c27b0; color: #9c27b0; }
+        section:nth-child(5) h2 { border-left: 4px solid #ff9800; color: #ff9800; }
+        section:nth-child(6) h2 { border-left: 4px solid #4caf50; color: #4caf50; }
+
         section h2 {
             font-size: 1.5em;
-            border-left: 4px solid #00bcd4;
             padding-left: 10px;
             margin-bottom: 15px;
-            color: #fff;
         }
 
         .item h3 {
@@ -79,11 +85,13 @@
             border-radius: 20px;
             font-size: 0.9em;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
         ul li:hover {
+            transform: scale(1.05);
             background: #0097a7;
+            color: white;
         }
 
         /* Responsive Design */
